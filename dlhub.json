@@ -1,0 +1,98 @@
+{
+  "dlhub": {
+    "version": "0.10.0",
+    "domains": [
+      "climate science",
+      "MODIS",
+      "satelite imagery"
+    ],
+    "visible_to": [
+      "public"
+    ],
+    "name": "clouds_RI_encoder",
+    "files": {
+      "other": [
+        "./encoder-10021600/saved_model.pb",
+        "./encoder-10021600/variables/variables.index",
+        "./encoder-10021600/variables/variables.data-00000-of-00001"
+      ]
+    },
+    "dependencies": {
+      "python": {
+        "tensorflow": "2.5.0-dev20210212"
+      }
+    },
+    "type": "servable"
+  },
+  "datacite": {
+    "identifier": {
+      "identifier": "DOI: 10.1109/TGRS.2021.3098008",
+      "identifierType": "DOI"
+    },
+    "creators": [
+      {
+        "nameIdentifiers": [],
+        "affiliations": [
+          "University of Chicago"
+        ],
+        "familyName": "Kurihana",
+        "givenName": "Takuya"
+      }
+    ],
+    "titles": [
+      {
+        "title": "Encoder part of RI autoencoder trained on 1M MODIS patches from 2000-2020"
+      }
+    ],
+    "publisher": "DLHub",
+    "publicationYear": "",
+    "subjects": [],
+    "resourceType": {
+      "resourceTypeGeneral": "InteractiveResource"
+    },
+    "contributors": [],
+    "descriptions": [],
+    "alternateIdentifiers": [],
+    "relatedIdentifiers": [],
+    "rightsList": [],
+    "fundingReferences": [],
+    "version": "v1.0.0"
+  },
+  "servable": {
+    "type": "TensorFlow Model",
+    "shim": "tensorflow.TensorFlowServable",
+    "methods": {
+      "run": {
+        "input": {
+          "type": "ndarray",
+          "description": "encoding_input:0",
+          "shape": [
+            null,
+            128,
+            128,
+            6
+          ],
+          "item_type": {
+            "type": "float"
+          }
+        },
+        "output": {
+          "type": "ndarray",
+          "description": "Identity:0",
+          "shape": [
+            null,
+            2,
+            2,
+            512
+          ],
+          "item_type": {
+            "type": "float"
+          }
+        },
+        "parameters": {},
+        "method_details": {}
+      }
+    },
+    "options": {}
+  }
+}
